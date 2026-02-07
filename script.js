@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".buttons");
 
   // Accept button behavior
-  acceptBtn.addEventListener("click", () => {
+acceptBtn.addEventListener("click", () => {
   response.innerHTML = `
     💖✨ You’ve said YES! ✨💖 <br><br>
     🥰 From this moment, my heart belongs to you forever. <br>
@@ -13,11 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
     for all the days of my life. 🌹💫
   `;
   document.body.style.background = "linear-gradient(to right, #ffdde1, #ee9ca7)";
-  
-  // Disable Decline button completely
+  response.style.color = "#e63946";
+
+  // Disable Decline button
   declineBtn.disabled = true;
   declineBtn.style.opacity = "0.5";
   declineBtn.style.cursor = "not-allowed";
+
+  // Floating hearts animation
+  for (let i = 0; i < 20; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = "💖";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    heart.style.top = window.innerHeight + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 4000);
+  }
 });
 
 
