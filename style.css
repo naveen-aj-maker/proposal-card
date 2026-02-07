@@ -16,6 +16,23 @@ body {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+.heart {
+  position: fixed;
+  font-size: 24px;
+  animation: floatUp 4s ease forwards;
+  pointer-events: none;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) scale(1.5);
+    opacity: 0;
+  }
+}
 
 .card {
   background: #fff0f5;
@@ -78,3 +95,4 @@ button:hover {
   color: #b8860b; /* golden tone */
   transition: color 1s ease; /* smooth color change */
 }
+
